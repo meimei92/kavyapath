@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>आपकी वेबसाइट काव्यपाठ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+        }
+        header {
+            background-color: #5cb85c;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        nav {
+            text-align: center;
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #eee;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover, nav a:active {
+            background-color: #ddd;
+        }
+        .hero {
+            padding: 30px 0;
+            text-align: center;
+        }
+        .cta-button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #4cae4c;
+        }
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+        .slides {
+            display: none;
+            width: 100%;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+        }
+        .shloka-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .shloka-section blockquote {
+            font-size: 1.2em;
+            color: #666;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 5px solid #5cb85c;
+            background-color: #fff;
+            border-radius: 3px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>आपका स्वागत है</h1>
+        <p>Welcome to our Website</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">होम (Home)</a></li>
+            <li><a href="#">हमारे बारे में (About Us)</a></li>
+            <li><a href="#">सेवाएँ (Services)</a></li>
+            <li><a href="#">ब्लॉग (Blog)</a></li>
+            <li><a href="#">संपर्क (Contact)</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h2>ज्ञान और शांति की ओर एक कदम</h2>
+        <p>A step towards knowledge and peace.</p>
+        <button class="cta-button">और जानें (Learn More)</button>
+    </div>
+
+    <div class="slideshow-container">
+        <img class="slides" src="https://t3.ftcdn.net/jpg/02/29/73/96/360_F_229739617_qOIqIlFlig39a1DehF1w8cDPoYr8yAnf.jpg" alt="Slide 1">
+        <img class="slides" src="https://cdn.pixabay.com/photo/2024/04/10/22/52/autumn-8688876_1280.jpg" alt="Slide 2">
+        <img class="slides" src="https://lectera.com/info/storage/img/20230215/79451fd8ee37466680bc_808xFull.png" alt="Slide 3">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <div class="shloka-section">
+        <h3>आज का श्लोक (Today's Shloka)</h3>
+        <blockquote>
+            सर्वे भवन्तु सुखिनः,<br>
+            सर्वे सन्तु निरामयाः।<br>
+            सर्वे भद्राणि पश्यन्तु,<br>
+            मा कश्चिद्दुःखभाग्भवेत्।।
+        </blockquote>
+        <p class="translation">(May all be happy, may all be free from illness, may all see what is auspicious, may no one partake in sorrow.)</p>
+    </div>
+
+    <footer>
+        &copy; 2025 आपकी वेबसाइट का नाम (Your Website Name) | सर्वाधिकार सुरक्षित (All Rights Reserved)
+    </footer>
+</div>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let slides = document.getElementsByClassName("slides");
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000);
+    }
+
+    function plusSlides(n) {
+        slideIndex += n - 1;
+        showSlides();
+    }
+</script>
+</body>
+</html>
